@@ -27,11 +27,11 @@ const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          <FpsCounter/>
+          <FpsCounter />
           {navLinks.map((link) => (
-              <li
-                  key={link.id}
-                  className={`text-[18px] font-bold cursor-pointer transform transition-all duration-300 
+            <li
+              key={link.id}
+              className={`text-[18px] font-bold cursor-pointer transform transition-all duration-300 
                             ${active === link.title ? "fire text-white" : "text-secondary"} 
                             hover:fire text-violet-600 
                             hover:text-3xl
@@ -40,10 +40,10 @@ const Navbar = () => {
                             cursor-pointer
                          
                             hover:drop-shadow-[0_0_80px_rgba(139,92,246,1)]`}
-                  onClick={() => setActive(link.title)}
-              >
-                <a href={`#${link.id}`}>{link.title}</a>
-              </li>
+              onClick={() => setActive(link.title)}
+            >
+              <a href={`#${link.id}`}>{link.title}</a>
+            </li>
           ))}
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
