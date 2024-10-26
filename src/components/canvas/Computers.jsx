@@ -44,9 +44,9 @@ const ComputersCanvas = () => {
     };
   }, []);
 
-  const fps = useFPS();
+  const { fps, insufficientComputingPower } = useFPS();
 
-  if (fps > 30) {
+  if (fps > 30 && !insufficientComputingPower) {
     return (
       <Canvas
         frameloop="demand"

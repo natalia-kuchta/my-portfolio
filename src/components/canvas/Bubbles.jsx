@@ -40,9 +40,9 @@ const Bubbles = (props) => {
 import { useFPS } from "../../FpsContext.jsx";
 
 const BubblesCanvas = () => {
-  const fps = useFPS();
+  const { fps, insufficientComputingPower } = useFPS();
 
-  if (fps > 40) {
+  if (fps > 40 && !insufficientComputingPower) {
     return (
       <div className="w-full h-auto absolute inset-0 z-[-1]">
         <Canvas camera={{ position: [0, 0, 1] }}>

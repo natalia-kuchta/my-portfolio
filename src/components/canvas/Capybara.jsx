@@ -18,9 +18,9 @@ const Capybara = () => {
 };
 
 const CapybaraCanvas = () => {
-  const fps = useFPS();
+  const { fps, insufficientComputingPower } = useFPS();
 
-  if (fps > 20) {
+  if (fps > 20 && !insufficientComputingPower) {
     return (
       <Canvas
         frameloop="demand"
