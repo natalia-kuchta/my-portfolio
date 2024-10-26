@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       dropShadow: {
-        'glow': '0 0 20px rgba(139,92,246,1)',
+        glow: "0 0 20px rgba(139,92,246,1)",
       },
       colors: {
         primary: "#080808",
@@ -28,4 +28,3 @@ export default {
   },
   plugins: [],
 };
-

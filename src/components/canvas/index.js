@@ -3,4 +3,4 @@ import BallCanvas from "./Ball.jsx";
 import ComputersCanvas from "./Computers";
 import BubblesCanvas from "./Bubbles.jsx";
 
-export { CapybaraCanvas,BallCanvas, ComputersCanvas, BubblesCanvas };
+export { CapybaraCanvas, BallCanvas, ComputersCanvas, BubblesCanvas };
