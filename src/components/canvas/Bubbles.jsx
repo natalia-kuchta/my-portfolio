@@ -37,24 +37,32 @@ const Bubbles = (props) => {
   );
 };
 
+import { useFPS } from "../../FpsContext.jsx";
+
 const BubblesCanvas = () => {
-  return (
-    <div className="w-full h-auto absolute inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Bubbles />
-          <EffectComposer>
-            <Bloom
-              intensity={1.5}
-              luminanceThreshold={0.1}
-              luminanceSmoothing={0.9}
-            />
-          </EffectComposer>
-        </Suspense>
-        <Preload all />
-      </Canvas>
-    </div>
-  );
+  const fps = useFPS();
+
+  if (fps > 100) {
+    return (
+      <div className="w-full h-auto absolute inset-0 z-[-1]">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Bubbles />
+            <EffectComposer>
+              <Bloom
+                intensity={1.5}
+                luminanceThreshold={0.1}
+                luminanceSmoothing={0.9}
+              />
+            </EffectComposer>
+          </Suspense>
+          <Preload all />
+        </Canvas>
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default BubblesCanvas;
