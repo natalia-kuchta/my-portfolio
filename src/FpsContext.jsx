@@ -1,8 +1,8 @@
 import React, {
   createContext,
-  useRef,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -10,11 +10,12 @@ const FpsContext = createContext();
 
 export const FpsProvider = ({ children }) => {
   const [fps, setFps] = useState(0);
-  const [insufficientComputingPower, setInsufficientComputingPower] =
-    useState(false);
   const [lowFpsCount, setLowFpsCount] = useState(0); // Counter for low FPS occurrences
   const frameCount = useRef(0);
   const lastTime = useRef(Date.now());
+
+  // Compute insufficientComputingPower directly based on lowFpsCount
+  const insufficientComputingPower = lowFpsCount >= 3;
 
   useEffect(() => {
     const updateFPS = () => {
@@ -30,9 +31,6 @@ export const FpsProvider = ({ children }) => {
           setLowFpsCount((prevCount) => prevCount + 1); // Increment counter
         }
 
-        // Set insufficientComputingPower if low FPS occurred 3 times
-        setInsufficientComputingPower(lowFpsCount >= 3);
-
         frameCount.current = 0;
         lastTime.current = now;
       }
@@ -43,10 +41,12 @@ export const FpsProvider = ({ children }) => {
     requestAnimationFrame(updateFPS);
 
     return () => cancelAnimationFrame(updateFPS);
-  }, [lowFpsCount]); // Add lowFpsCount as a dependency
+  }, []);
 
   return (
-    <FpsContext.Provider value={{ fps, insufficientComputingPower }}>
+    <FpsContext.Provider
+      value={{ fps, insufficientComputingPower, lowFpsCount }}
+    >
       {children}
     </FpsContext.Provider>
   );
