@@ -43,10 +43,10 @@ export const FpsProvider = ({ children }) => {
     requestAnimationFrame(updateFPS);
 
     return () => cancelAnimationFrame(updateFPS);
-  }, [lowFpsCount]); // Add lowFpsCount as a dependency
+  }, [lowFpsCount, ]); // Add lowFpsCount as a dependency
 
   return (
-    <FpsContext.Provider value={{ fps, insufficientComputingPower }}>
+    <FpsContext.Provider value={{ fps, insufficientComputingPower, lowFpsCount }}>
       {children}
     </FpsContext.Provider>
   );

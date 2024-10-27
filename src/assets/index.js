@@ -19,7 +19,7 @@ import reactjs from "./tech/reactjs.png";
 import vue from "./tech/vue.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import threejs from "./tech/threejs.png";
 import capy from "./capy.png";
 import blog from "./blog.png";
 import portfolio from "./portfolio.png";
