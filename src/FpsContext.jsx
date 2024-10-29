@@ -27,7 +27,7 @@ export const FpsProvider = ({ children }) => {
         setFps(calculatedFps);
 
         // Check if FPS is below 10
-        if (calculatedFps < 10) {
+        if (calculatedFps < 30) {
           setLowFpsCount((prevCount) => prevCount + 1); // Increment counter
         }
 

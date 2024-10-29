@@ -50,7 +50,9 @@ const CapybaraCanvas = () => {
       </Canvas>
     );
   } else {
-    return <></>;
+    return <>
+      <img src="" alt=""/>
+    </>;
   }
 };
 
