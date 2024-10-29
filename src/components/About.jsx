@@ -43,12 +43,11 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="text-center text-secondary text-[20px]  leading-[30px]"
       >
-        Im a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I&apos;m a quick learner and collaborate closely with clients
-        to create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let&apos;s work together to bring your ideas to
-        life!
+          I am a frontend developer with experience in JavaScript and TypeScript, and
+          proficiency in React, Vue.js, Astro, Tailwind CSS, and Three.js. I create modern,
+          efficient, and visually appealing applications that blend functionality with
+          great design. I value close collaboration with clients to tailor solutions to
+          their needs and achieve shared goals. Together, we can create something exceptional!
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
